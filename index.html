@@ -1,0 +1,105 @@
+<!doctype html>
+  <html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap" rel="stylesheet">
+    <link href="assets/css/styles.css" rel="stylesheet">
+    <script src="assets/js/script.js"></script>
+  </head>
+  <body class="font-lato font-normal text-md leading-normal antialiased">
+
+    <!-- Header start-->
+    <header x-data="{ nav: false }" class="bg-blue py-3 md:py-5 relative">
+      <div class="container">
+        <nav class="flex items-center justify-between">
+          <div class="text-2xl uppercase text-white ">Logo</div>
+          <div class="flex items-center lg:hidden">
+            <button @click.prevent="nav = ! nav" type="button" class="inline-flex items-center justify-center p-2 text-white hover:text-theme" aria-controls="mobile-menu" aria-expanded="false">
+              <svg class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+              </svg>
+            </button>
+          </div>
+          <div :class="{ hidden: ! nav }" class="hidden bg-blue md:bg-transparent lg:block absolute md:static top-full inset-x-0 transition transform origin-top-right p-5 md:p-0 md:ml-6 xl:ml-0">
+           <ul class="main-menu md:flex gap-10 items-center font-bold text-md text-white">
+            <li class="mb-4 md:mb-0 text-theme">
+              <a href="javascript:;" class="hover:text-theme">Home</a>
+            </li>
+            <li class="mb-4 md:mb-0">
+              <a href="javascript:;" class="hover:text-theme">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+  </header>
+  <!-- Header end-->
+
+  <!-- Contact start-->
+  <div class="py-10 min-h-[calc(100vh-136px)]">
+    <div class="container">
+      <h1 class="text-3xl md:text-5xl text-center w-full font-bold">Hello world!</h1>
+
+
+      <div class="text-center mt-12" x-data="{ tab: 'exp-sub-1' }">
+        <div class="flex items-center justify-center text-white font-normal mb-5 md:mb-10">
+          <a @click="tab = 'exp-sub-1'" :class="[ tab == 'exp-sub-1' ? 'bg-theme' : 'border-transparent' ]" href="javascript:;" class="bg-blue py-2 px-5 rounded-md text-white hover:bg-theme leading-[30px] block text-md md:text-xl mx-2">
+            Tabs 1
+          </a>
+          <a @click="tab = 'exp-sub-2'" :class="[ tab == 'exp-sub-2' ? 'bg-theme' : 'border-transparent' ]" href="javascript:;" class="bg-blue py-2 px-5 rounded-md text-white hover:bg-theme leading-[30px] block text-md md:text-xl mx-2">
+            Tabs 2
+          </a>
+          <a @click="tab = 'exp-sub-3'" :class="[ tab == 'exp-sub-3' ? 'bg-theme' : 'border-transparent' ]" href="javascript:;" class="bg-blue py-2 px-5 rounded-md text-white hover:bg-theme leading-[30px] block text-md md:text-xl mx-2">
+            Tabs 3
+          </a>
+        </div>
+        <div :class="[ tab != 'exp-sub-1' ? 'hidden' : '' ]" class="py-5">
+          <div class="grid md:grid-cols-2 gap-10 text-left items-center">
+            <div>
+              <h2 class="text-xl md:text-3xl mb-5 font-bold">What is Lorem Ipsum?</h2>
+              <p class="leading-loose">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+            </div>
+            <div>
+              <img src="assets/images/not-1080.png" align="">
+            </div>
+          </div>
+        </div>
+        <div :class="[ tab != 'exp-sub-2' ? 'hidden' : '' ]" class="py-5">
+          <h2 class="text-xl md:text-3xl mb-5 font-bold">Where does it come from?</h2>
+          <p class="leading-loose">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</p>
+        </div>
+        <div :class="[ tab != 'exp-sub-3' ? 'hidden' : '' ]" class="py-5">
+          <div class="grid md:grid-cols-3 gap-5 lg:gap-10 text-left">
+            <div>
+              <h2 class="text-xl lg:text-3xl mb-5 font-bold">What is Lorem Ipsum?</h2>
+              <p class="leading-loose">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+            </div>
+            <div>
+              <h2 class="text-xl lg:text-3xl mb-5 font-bold">Why do we use it?</h2>
+              <p class="leading-loose">Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.</p>
+            </div>
+            <div>
+              <h2 class="text-xl lg:text-3xl mb-5 font-bold">Where does it come from?</h2>
+              <p class="leading-loose">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Contact end -->
+
+  <!-- footer start-->
+  <footer class="bg-blue py-5">
+    <div class="container">
+      <p class="text-md text-white text-center">
+        Copyright © 2022. All Rights Reserved By <a href="javascript:;" class="font-bold">Demo</a>
+      </p>
+    </div>
+  </footer>
+  <!-- footer end-->
+</body>
+</html>
