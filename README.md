@@ -3,7 +3,7 @@
 Start your build process
 
 ## 👉  `npm install`
-- In this repository files you first can install npm.
+- In this repository files you can first install npm.
 
 ## 👉  `npm run start`
 - Use to compile and run the block in development mode.
